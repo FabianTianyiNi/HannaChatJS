@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var teaminfos = new Schema({
+var TeamInfo = new Schema({
 name:{
  type:String,
  required:false
@@ -10,4 +10,4 @@ description:{
  required:false
 }
 });
-module.exports = mongoose.model('teaminfos', teaminfos);
+module.exports = mongoose.model('TeamInfo', TeamInfo);
