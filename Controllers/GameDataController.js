@@ -1,6 +1,6 @@
 'use strict';
 var mongoose = require('mongoose');
-var TeamInfo = mongoose.model('TeamInfo');
+var teaminfos = mongoose.model('teaminfos');
 
 exports.processRequest = function(req, res) {
     if (req.body.result.action == "tell.about") {
@@ -11,7 +11,7 @@ exports.processRequest = function(req, res) {
     function getTeamInfo(req,res)
     {
     let teamToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.team ? req.body.result.parameters.team : 'Unknown';
-    TeamInfo.findOne({name:teamToSearch},function(err,teamExists)
+    teaminfos.findOne({name:teamToSearch},function(err,teamExists)
           {
             if (err)
             {
